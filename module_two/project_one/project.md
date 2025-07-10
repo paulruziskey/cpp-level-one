@@ -1,0 +1,1 @@
+[Open project spec](https://rawcdn.githack.com/paulruziskey/cpp-level-one/afca3ec1dfda0b92c5a2ab928cc6e43805760650/module_two/project_one/project_one_basic_inventory_system.html)
