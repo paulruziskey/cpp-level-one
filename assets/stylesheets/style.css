@@ -1,0 +1,217 @@
+:root {
+    --background-color: #002b36;
+    --highlighted-background-color: #013f4f;
+    --border-color: #00586e;
+    --text-color: white;
+    --link-color: lightblue;
+    --diagram-background-color: #0e3c4a;
+    --diagram-node-background-color: #11191a;
+    --code-brightness: 140%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    :root {
+        scroll-behavior: smooth;
+    }
+}
+
+*:not(pre, code) {
+    font-family: system-ui;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--text-color);
+    scroll-margin-top: 1.5rem;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+pre {
+    backdrop-filter: brightness(var(--code-brightness));
+    border-radius: 5px;
+    padding: 20px;
+}
+
+code:not(pre code) {
+    backdrop-filter: brightness(var(--code-brightness));
+    border-radius: 3px;
+    padding: 3px 7px;
+}
+
+a {
+    color: var(--link-color);
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    font-size: 35px;
+}
+
+h4 {
+    font-size: 30px;
+}
+
+h5 {
+    font-size: 25px;
+}
+
+h6 {
+    font-size: 20px;
+}
+
+img {
+    font-style: italic;
+}
+
+table, th, td {
+    border: 2px solid var(--border-color);
+}
+
+th, td {
+    padding: 5px 15px;
+}
+
+table {
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+th {
+    background-color: var(--highlighted-background-color);
+}
+
+.main-content .centered {
+    width: 70vw;
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+.main-content .table-of-contents {
+    display: grid;
+    grid-template: min-content / 1fr 1fr;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+.main-content .table-of-contents > .toc-curriculum {
+    justify-self: center;
+}
+
+.main-content .table-of-contents > .toc-projects {
+    justify-self: center;
+}
+
+.diagram-large {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.diagram-small {
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+}
+
+.inline-icon {
+    height: 0.7rem;
+}
+
+.icon {
+    height: 1.5rem;
+}
+
+.logo {
+    height: 3rem;
+}
+
+.nav-grid {
+    display: grid;
+    grid-template: min-content / 1fr 6fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3vw;
+}
+
+.highlighted {
+    background-color: var(--highlighted-background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+}
+
+.main-content .highlighted {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.nav-grid-item-left {
+    justify-self: left;
+}
+
+.nav-grid-item-center {
+    justify-self: center;
+    text-align: center;
+}
+
+.nav-grid-item-right {
+    justify-self: right;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    background-color: var(--link-color);
+    border: 1px solid var(--background-color);
+    border-radius: 5px;
+    transition-duration: 200ms;
+}
+
+.button p {
+    margin: 0;
+    padding: 0.8rem 0;
+}
+
+.button a {
+    padding: 0.8rem 0.8rem;
+    text-decoration: none;
+    color: var(--background-color);
+}
+
+.button:hover {
+    filter: brightness(130%);
+}
+
+.back-button {
+    position: absolute;
+    width: max-content;
+    left: 30px;
+    bottom: 5vh;
+}
+
+.back-button-fixed {
+    position: fixed;
+    width: max-content;
+    top: 30px;
+    left: 30px;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex p {
+    margin: 0;
+}
+
+.small-code {
+    font-size: 12.5px;
+}
