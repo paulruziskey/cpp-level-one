@@ -17,7 +17,7 @@
 
 *:not(pre, code) {
     font-family: system-ui;
-    font-size: 18px;
+    font-size: 14pt;
     line-height: 1.5;
     color: var(--text-color);
     scroll-margin-top: 1.5rem;
@@ -88,6 +88,17 @@ th {
     background-color: var(--highlighted-background-color);
 }
 
+.centered-img {
+    display: block;
+    width: 60vw;
+    margin: 30px auto 5px auto;
+}
+
+.captioned-img {
+    text-align: center;
+    font-style: italic;
+}
+
 .main-content .centered {
     width: 70vw;
     max-width: 75rem;
@@ -131,6 +142,7 @@ th {
 
 .logo {
     height: 3rem;
+    margin: 0;
 }
 
 .nav-grid {
@@ -214,4 +226,13 @@ th {
 
 .small-code {
     font-size: 12.5px;
+}
+
+.bordered {
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+}
+
+.raised {
+    box-shadow: color-mix(in srgb, var(--highlighted-background-color), transparent 25%) 0px 13px 27px -5px, color-mix(in srgb, var(--highlighted-background-color), transparent 30%) 0px 8px 16px -8px;
 }
