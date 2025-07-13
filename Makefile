@@ -1,3 +1,8 @@
+ifeq ($(OS),Windows_NT)
+	SHELL := pwsh.exe
+	.SHELLFLAGS := -NoProfile -Command
+endif
+
 # Defines a newline.
 define n
 
@@ -21,18 +26,30 @@ int main() {
 }
 endef
 
-MATCHES_SEM_VER_NUM := ^[0-9]+[.][0-9]+[.][0-9]+$
-MATCHES_SEM_VER_NUM_WITHOUT_MINOR_VER_NUM := ^[0-9]+[.][0-9]+$
-MATCHES_MINOR_VER_NUM := [.][0-9]+$
+MATCHES_SEM_VER_NUM := ^[0-9]+\.[0-9]+\.[0-9]+$
+MATCHES_SEM_VER_NUM_WITHOUT_MINOR_VER_NUM := ^[0-9]+\.[0-9]+$
+MATCHES_MINOR_VER_NUM := \.[0-9]+$
 CMAKE_VERSION := $(strip $(CMAKE_VERSION))
 ifneq ($(CMAKE_VERSION),)
 	MANUAL_CMAKE_VERSION := true
-	VALID := $(shell if [[ '$(CMAKE_VERSION)' =~ $(MATCHES_SEM_VER_NUM) ]] || [[ '$(CMAKE_VERSION)' =~ $(MATCHES_SEM_VER_NUM_WITHOUT_MINOR_VER_NUM) ]]; then echo 'valid'; fi)
+	ifeq ($(OS),Windows_NT)
+		VALID := $(shell if (('$(CMAKE_VERSION)' -match '$(MATCHES_SEM_VER_NUM)') -or ('$(CMAKE_VERSION)' -match '$(MATCHES_SEM_VER_NUM_WITHOUT_MINOR_VER_NUM)')) { 'valid' })
+	else
+		VALID := $(shell if [[ '$(CMAKE_VERSION)' =~ $(MATCHES_SEM_VER_NUM) ]] || [[ '$(CMAKE_VERSION)' =~ $(MATCHES_SEM_VER_NUM_WITHOUT_MINOR_VER_NUM) ]]; then echo 'valid'; fi)
+	endif
 else
-	CMAKE_VERSION := $(strip $(foreach word,$(shell cmake --version),$(shell if [[ '$(word)' =~ $(MATCHES_SEM_VER_NUM) ]]; then echo '$(word)'; fi)))
+	ifeq ($(OS),Windows_NT)
+		CMAKE_VERSION := $(strip $(foreach word,$(shell cmake --version),$(shell if ('$(word)' -match '$(MATCHES_SEM_VER_NUM)') { '$(word)' })))
+	else
+		CMAKE_VERSION := $(strip $(foreach word,$(shell cmake --version),$(shell if [[ '$(word)' =~ $(MATCHES_SEM_VER_NUM) ]]; then echo '$(word)'; fi)))
+	endif
 	VALID := $(if $(CMAKE_VERSION),valid)
 endif
-CMAKE_VERSION := $(shell echo '$(CMAKE_VERSION)' | sed -E 's/$(MATCHES_MINOR_VER_NUM)//')
+ifeq ($(OS),Windows_NT)
+	CMAKE_VERSION := $(shell '$(CMAKE_VERSION)' -replace '$(MATCHES_MINOR_VER_NUM)', '')
+else
+	CMAKE_VERSION := $(shell echo '$(CMAKE_VERSION)' | sed -E 's/$(MATCHES_MINOR_VER_NUM)//')
+endif
 DESCRIPTION := $(strip $(DESCRIPTION))
 define GLOBAL_CMAKE_CONTENT
 cmake_minimum_required(VERSION $(CMAKE_VERSION) FATAL_ERROR)
@@ -145,7 +162,7 @@ validate:
 .PHONY: project
 project: validate
 	$(info creating project directory)
-	$(shell mkdir -p $(PROJECT_DIR))
+	$(shell mkdir -p $(PROJECT_DIR)$(if $(filter $(OS),Windows_NT), | Out-Null))
 	$(info creating global CMakeLists.txt)
 	$(file > $(PROJECT_DIR)/CMakeLists.txt,$(GLOBAL_CMAKE_CONTENT))
 	$(info creating README.md)
@@ -154,7 +171,7 @@ project: validate
 .PHONY: src
 src: project
 	$(info creating source directory)
-	$(shell mkdir $(SRC_DIR))
+	$(shell mkdir $(SRC_DIR)$(if $(filter $(OS),Windows_NT), | Out-Null))
 	$(info creating main.cpp)
 	$(file > $(SRC_DIR)/main.cpp,$(MAIN_CPP_CONTENT))
 	$(info creating local CMakeLists.txt)
@@ -162,22 +179,22 @@ src: project
 
 .PHONY: include
 include: project
-	mkdir $(INCLUDE_DIR)
-	mkdir $(INCLUDE_DIR)/$(PROJECT_NAME)
+	mkdir $(INCLUDE_DIR)$(if $(filter $(OS),Windows_NT), | Out-Null)
+	mkdir $(INCLUDE_DIR)/$(PROJECT_NAME)$(if $(filter $(OS),Windows_NT), | Out-Null)
 
 .PHONY: docs
 docs: project
-	mkdir $(DOCS_DIR)
+	mkdir $(DOCS_DIR)$(if $(filter $(OS),Windows_NT), | Out-Null)
 
 .PHONY: cmake
 cmake: project src
-	mkdir $(CMAKE_DIR)
+	mkdir $(CMAKE_DIR)$(if $(filter $(OS),Windows_NT), | Out-Null)
 	wget -O $(CMAKE_DIR)/CPM.cmake https://github.com/cpm-cmake/CPM.cmake/releases/latest/download/get_cpm.cmake
 
 .PHONY: tests
 tests: project src
 	$(info creating testing directory)
-	$(shell mkdir $(TESTS_DIR))
+	$(shell mkdir $(TESTS_DIR)$(if $(filter $(OS),Windows_NT), | Out-Null))
 	$(info creating local CMakeLists.txt)
 	$(file > $(TESTS_DIR)/CMakeLists.txt,$(TESTS_CMAKE_CONTENT))
 
@@ -190,7 +207,7 @@ clean:
 	$(if $(DESCRIPTION),$(warning DESCRIPTION provided, but it won't be used.),)
 	$(if $(MANUAL_TARGET_NAME),$(warning TARGET_NAME provided, but it won't be used.))
 	$(if $(MANUAL_STD),$(warning STD provided, but it won't be used.))
-	rm -rf $(PROJECT_DIR)
+	rm$(if $(filter-out $(OS),Windows_NT), -rf) $(PROJECT_DIR)$(if $(filter $(OS),Windows_NT), -Recurse -Force)
 
 .PHONY: help
 help:
