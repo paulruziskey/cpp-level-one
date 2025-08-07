@@ -1,1 +1,1 @@
-[Open project spec](https://rawcdn.githack.com/paulruziskey/cpp-level-one/698012b25959cd356a06fb250c4b3cdbf022815e/module_two/project_two/project_two_buggy_inventory.html)
+[Open project spec](https://rawcdn.githack.com/paulruziskey/cpp-level-one/9a92926dfbaa9c085a66142d4ba3cc8b42a207b4/module_two/project_two/project_two_buggy_inventory.html)

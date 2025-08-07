@@ -1,1 +1,1 @@
-[Open project spec](https://rawcdn.githack.com/paulruziskey/cpp-level-one/a486fabc4dc1fd1bf8e8d155a9b2d6af8be7a6ff/module_two/project_three/project_three_choosing_the_right_data_type.html)
+[Open project spec](https://rawcdn.githack.com/paulruziskey/cpp-level-one/9a92926dfbaa9c085a66142d4ba3cc8b42a207b4/module_two/project_three/project_three_choosing_the_right_data_type.html)
