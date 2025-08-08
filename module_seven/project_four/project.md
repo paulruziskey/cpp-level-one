@@ -1,1 +1,1 @@
-[Open project spec](https://rawcdn.githack.com/paulruziskey/cpp-level-one/b0a628cb182f42ca83e59c022c922ad72f1ecb21/module_seven/project_four/project_four_wheel_of_function.html)
+[Open project spec](https://rawcdn.githack.com/paulruziskey/cpp-level-one/8ca969e104b6032a260daaafc384fd3ea7f6b55c/module_seven/project_four/project_four_wheel_of_function.html)
