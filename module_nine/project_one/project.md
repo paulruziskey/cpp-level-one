@@ -1,1 +1,1 @@
-[Open project spec](https://rawcdn.githack.com/paulruziskey/cpp-level-one/4cf4c29cda0a243c61dfbd103c12943937eb611d/module_nine/project_one/project_one_array_practice.html)
+[Open project spec](https://rawcdn.githack.com/paulruziskey/cpp-level-one/823d75e59041a177af0ee99dca085306df781a4c/module_nine/project_one/project_one_array_practice.html)
