@@ -1,1 +1,1 @@
-[Open project spec](https://rawcdn.githack.com/paulruziskey/cpp-level-one/823d75e59041a177af0ee99dca085306df781a4c/module_nine/project_two/project_two_number_guesser.html)
+[Open project spec](https://rawcdn.githack.com/paulruziskey/cpp-level-one/0422e5220abe8e77301a112b12e691ff78021339/module_nine/project_two/project_two_number_guesser.html)
