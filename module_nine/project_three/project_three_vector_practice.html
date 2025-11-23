@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Vector Practice</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="../../assets/stylesheets/style.css" />
+</head>
+<body>
+<div class="button back-button">
+<p><a
+href="https://github.com/paulruziskey/cpp-level-one/tree/main/module_nine">❮
+Module Nine</a></p>
+</div>
+<div class="nav-grid highlighted">
+<div class="nav-grid-item-left button">
+<p><a href="../project_two/project_two_number_guesser.html">❮ Project Two</a></p>
+</div>
+<section id="project-three-vector-practice"
+class="nav-grid-item-center">
+<h1>Project Three: Vector Practice</h1>
+</section>
+<div class="nav-grid-item-right button">
+
+</div>
+</div>
+<div class="main-content">
+<div class="centered">
+<p>In this project, you’ll work on a few things to help you practice
+using vectors! These tasks will also show you good use cases for
+vectors. Complete the following tasks to complete the project! Example
+output is shown below.</p>
+<ol type="1">
+<li>Copy your overloaded insertion operator from one of the array
+projects and change it to work with vectors.</li>
+<li>Write a function called <code>split</code> which splits a string on
+some character delimiter and returns a vector with the resulting
+substrings.</li>
+<li>Test your <code>split</code> function on its own. You should print
+the string you’re testing and the delimiter your splitting on as well as
+the results.</li>
+<li>Write a function called <code>get_user_nums</code> which repeatedly
+asks the user to enter numbers separated by spaces. The function
+shouldn’t end until the user enters a semicolon to terminate their
+input. This means it’s possible for the user’s input to span multiple
+inputs, so the function should accommodate this. Make sure to handle
+extra spaces if they appear as well as bad inputs. For this particular
+function, all acceptable numbers should be accepted, while all bad
+inputs should be rejected and reported.</li>
+<li>Call your <code>get_user_nums</code> function a random number of
+times between two and five and store each round of inputs in a vector.
+Make sure to report the current round number and the total number of
+rounds so the user doesn’t worry that the program’s broken! Also
+acknowledge the user’s input for each round by printing it.</li>
+<li>Write a function called <code>distinct_repeated_vals</code> which
+accepts a two-dimensional vector of signed 32-bit integers and returns a
+vector containing of the integer values that are repeated at least once
+in the input vector.</li>
+<li>Call this function on your vector of user inputs and report the
+results to the user. Make sure to say they entered distinct values if
+the returned vector is empty!</li>
+</ol>
+<div class="captioned-img">
+<p><img
+src="../../assets/images/module_nine/project_three/example_good_distinct_input.png"
+class="bordered raised centered-img"
+title="Example output with good input and distinct values"
+alt="Example output with good input and distinct values" /> Example
+output with good input and distinct values</p>
+</div>
+<div class="captioned-img">
+<p><img
+src="../../assets/images/module_nine/project_three/example_bad_repeated_input.png"
+class="bordered raised centered-img"
+title="Example output with bad input and repeated values"
+alt="Example output with bad input and repeated values" /> Example
+output with bad input and repeated values</p>
+</div>
+</div>
+</div>
+<div class="nav-grid">
+<div class="nav-grid-item-left">
+<p><a href="../project_two/project_two_number_guesser.html">❮ Project Two</a></p>
+</div>
+<div class="nav-grid-item-center flex">
+<div class="flex-row">
+<p><a href="https://github.com/paulruziskey/cpp-level-one"><img
+src="../../assets/logos/c++.svg" class="logo" title="C++ Curriculum"
+alt="C++" /></a></p>
+</div>
+<div class="flex-row">
+<p>© 2025 Paul Ruziskey. All rights reserved.</p>
+</div>
+</div>
+<div class="nav-grid-item-right">
+
+</div>
+</div>
+<script src="../../assets/scripts/sticky_back_button.js"></script>
+</body>
+</html>
