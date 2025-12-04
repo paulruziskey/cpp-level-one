@@ -22,22 +22,24 @@
     }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <link rel="stylesheet" href="../../assets/stylesheets/style.css" />
+  <link rel="stylesheet" href="/Volumes/SEAGATE RED/cpp_projects/cpp_curriculum/curriculum/assets/stylesheets/style.css" />
 </head>
 <body>
 <div class="button back-button">
-<p><a href="https://github.com/paulruziskey/cpp-level-one/tree/main/module_two">❮ Module Two</a></p>
+<p><a
+href="https://github.com/paulruziskey/cpp-level-one/tree/main/module_two">❮
+Module Two</a></p>
 </div>
 <div class="nav-grid highlighted">
 <div class="nav-grid-item-left button">
-<p><a href="../project_one/project_one_basic_inventory_system.html">❮ Project
+<p><a href="project_one_basic_inventory_system.html">❮ Project
 One</a></p>
 </div>
 <section id="project-two-buggy-inventory" class="nav-grid-item-center">
 <h1>Project Two: Buggy Inventory</h1>
 </section>
 <div class="nav-grid-item-right button">
-<p><a href="../project_three/project_three_choosing_the_right_data_type.html">Project
+<p><a href="project_three_choosing_the_right_data_type.html">Project
 Three ❯</a></p>
 </div>
 </div>
@@ -45,51 +47,52 @@ Three ❯</a></p>
 <div class="centered">
 <p>You just received an email from your friend Kant D. Bugg! It looks
 like he’s in desperate need of some help! Read the email and figure out
-what’s going on!</p>
-<pre><code>Dear friend,
-
-Thank you so much for the wonderful code for the mock UI! We were so happy when we got it! It inspired us to get back into 
-things, so Kant C. and I had a crack at some other parts of the inventory system. I tried implementing a system to track 
-shipments, but I ended up having all sorts of weird things happen when I messed up the input. It also seems like I can&#39;t enter 
-more than one word for the shipment type? I wasn&#39;t sure what was going on, so I tried debugging a bit, but I&#39;m really not 
-great at it.
-
-As for Kant C., he also had problems. He couldn&#39;t see what the problems were with his code, so Kant B. stepped in to help. 
-Perhaps &quot;help&quot; is a strong word, here, since he always thinks his code is better than everyone else&#39;s, and he never thinks he 
-can have bugs in his own code. Long story short, he tried some things, but his version didn&#39;t really work either. It seems 
-they were both using some new data types and some new syntax I wasn&#39;t familiar with, so I wasn&#39;t able to help them.
-
-Could you please figure out what&#39;s going on, and could you explain it in comments in the code? Would you also be able to fix the 
-code so we could see how it should have been done? C. and B. couldn&#39;t figure out the formatting thing you did, either, so 
-could you format their table correctly, too?
-
-I owe you big time! I&#39;ve included some comments in my code detailing my questions and concerns. Below, you&#39;ll also find some 
-examples of some of the things I tried.
-
-Your friend,
-Kant D. Bugg
-
------ RUN ONE -----
-Enter the shipment type: GM
+what’s going on! It reads as follows.</p>
+<p>Dear friend,</p>
+<p>Thank you so much for the wonderful code for the mock UI! We were so
+happy when we got it! It inspired us to get back into things, so Kant C.
+and I had a crack at some other parts of the inventory system. I tried
+implementing a system to track shipments, but I ended up having all
+sorts of weird things happen when I messed up the input. It also seems
+like I can’t enter more than one word for the shipment type? I wasn’t
+sure what was going on, so I tried debugging a bit, but I’m really not
+great at it.</p>
+<p>As for Kant C., he also had problems. He couldn’t see what the
+problems were with his code, so Kant B. stepped in to help. Perhaps
+“help” is a strong word, here, since he always thinks his code is better
+than everyone else’s, and he never thinks he can have bugs in his own
+code. Long story short, he tried some things, but his version didn’t
+really work either. It seems they were both using some new data types
+and some new syntax I wasn’t familiar with, so I wasn’t able to help
+them.</p>
+<p>Could you please figure out what’s going on, and could you explain it
+in comments in the code? Would you also be able to fix the code so we
+could see how it should have been done? C. and B. couldn’t figure out
+the formatting thing you did, either, so could you format their table
+correctly, too?</p>
+<p>I owe you big time! I’ve included some comments in my code detailing
+my questions and concerns. Below, you’ll also find some examples of some
+of the things I tried.</p>
+<p>Your friend, Kant D. Bugg</p>
+<p>– RUN ONE –</p>
+<pre><code>Enter the shipment type: GM
 Enter the shipment origin: Tokyo
 Enter the shipment destination: Paris
 Enter the total cost for the shipment: $30,452.34
 Enter the total weight for the shipment: Enter the shipment distance: 
 GM shipment: Tokyo -&gt; Paris
-$0 | 6.9516e-310lbs. | 0mi.
-
------ RUN TWO -----
-Enter the shipment type: GM
+$0 | 6.9516e-310lbs. | 0mi.</code></pre>
+<p>– RUN TWO –</p>
+<pre><code>Enter the shipment type: GM
 Enter the shipment origin: Tokyo
 Enter the shipment destination: Paris
 Enter the total cost for the shipment: 34256.34
 Enter the total weight for the shipment: Enter the shipment distance: 3429
 
 GM shipment: Tokyo -&gt; Paris
-$34256 | 0.34lbs. | 3429mi.
-
------ RUN THREE -----
-Enter the shipment type: General merchandise
+$34256 | 0.34lbs. | 3429mi.</code></pre>
+<p>– RUN THREE –</p>
+<pre><code>Enter the shipment type: General merchandise
 Enter the shipment origin: Enter the shipment destination: Paris
 Enter the total cost for the shipment: 30425.34
 Enter the total weight for the shipment: Enter the shipment distance: 234567
@@ -100,23 +103,24 @@ $30425 | 0.34lbs. | 234567mi.</code></pre>
 </div>
 <div class="nav-grid">
 <div class="nav-grid-item-left">
-<p><a href="../project_one/project_one_basic_inventory_system.html">❮ Project
+<p><a href="project_one_basic_inventory_system.html">❮ Project
 One</a></p>
 </div>
 <div class="nav-grid-item-center flex">
 <div class="flex-row">
-<p><a href="https://github.com/paulruziskey/cpp-level-one"><img src="../../assets/logos/c++.svg" class="logo"
-title="C++ Curriculum" alt="C++" /></a></p>
+<p><a href="https://github.com/paulruziskey/cpp-level-one"><img
+src="../../../logos/c++.svg" class="logo" title="C++ Curriculum"
+alt="C++" /></a></p>
 </div>
 <div class="flex-row">
 <p>© 2025 Paul Ruziskey. All rights reserved.</p>
 </div>
 </div>
 <div class="nav-grid-item-right">
-<p><a href="../project_three/project_three_choosing_the_right_data_type.html">Project
+<p><a href="project_three_choosing_the_right_data_type.html">Project
 Three ❯</a></p>
 </div>
 </div>
-<script src="../../assets/scripts/sticky_back_button.js"></script>
+<script src="../../../scripts/sticky_back_button.js"></script>
 </body>
 </html>
