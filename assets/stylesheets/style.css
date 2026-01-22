@@ -7,10 +7,8 @@
     --diagram-background-color: #0e3c4a;
     --diagram-node-background-color: #11191a;
     --code-brightness: 140%;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-    :root {
+    @media (prefers-reduced-motion: no-preference) {
         scroll-behavior: smooth;
     }
 }
@@ -90,7 +88,7 @@ th {
 
 .centered-img {
     display: block;
-    width: 60vw;
+    max-width: 60vw;
     margin: 30px auto 5px auto;
 }
 
@@ -99,35 +97,28 @@ th {
     font-style: italic;
 }
 
-.centered-video {
-    display: block;
-    margin: 30px auto 5px auto;
-}
+.main-content {
+    .centered {
+        width: 70vw;
+        max-width: 75rem;
+        margin: 0 auto;
+    }
 
-.captioned-video {
-    text-align: center;
-    font-style: italic;
-}
+    .highlighted {
+        width: 85%;
+        margin: 0 auto;
+    }
 
-.main-content .centered {
-    width: 70vw;
-    max-width: 75rem;
-    margin: 0 auto;
-}
+    .table-of-contents {
+        display: grid;
+        grid-template: min-content / 1fr 1fr;
+        justify-content: space-around;
+        align-items: baseline;
 
-.main-content .table-of-contents {
-    display: grid;
-    grid-template: min-content / 1fr 1fr;
-    justify-content: space-around;
-    align-items: baseline;
-}
-
-.main-content .table-of-contents > .toc-curriculum {
-    justify-self: center;
-}
-
-.main-content .table-of-contents > .toc-projects {
-    justify-self: center;
+        > :is(.toc-curriculum, .toc-projects) {
+            justify-self: center;
+        }
+    }
 }
 
 .diagram-large {
@@ -169,11 +160,6 @@ th {
     border-radius: 10px;
 }
 
-.main-content .highlighted {
-    width: 85%;
-    margin: 0 auto;
-}
-
 .nav-grid-item-left {
     justify-self: left;
 }
@@ -196,22 +182,22 @@ th {
     border-radius: 5px;
     transition-duration: 200ms;
     z-index: 500;
-}
 
-.button p {
-    margin: 0;
-    padding: 0.8rem 0;
-    flex-shrink: 0;
-}
+    p {
+        margin: 0;
+        padding: 0.8rem 0;
+        flex-shrink: 0;
+    }
 
-.button a {
-    padding: 0.8rem 0.8rem;
-    text-decoration: none;
-    color: var(--background-color);
-}
+    a {
+        padding: 0.8rem 0.8rem;
+        text-decoration: none;
+        color: var(--background-color);
+    }
 
-.button:hover {
-    filter: brightness(130%);
+    &:hover {
+        filter: brightness(130%);
+    }
 }
 
 .back-button {
@@ -232,10 +218,10 @@ th {
 .flex {
     display: flex;
     flex-direction: column;
-}
 
-.flex p {
-    margin: 0;
+    p {
+        margin: 0;
+    }
 }
 
 .small-code {
