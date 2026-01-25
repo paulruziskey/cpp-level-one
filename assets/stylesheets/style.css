@@ -97,6 +97,16 @@ th {
     font-style: italic;
 }
 
+.centered-video {
+    display: block;
+    margin: 30px auto 5px auto;
+}
+
+.captioned-video {
+    text-align: center;
+    font-style: italic;
+}
+
 .main-content {
     .centered {
         width: 70vw;
