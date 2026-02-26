@@ -99,6 +99,7 @@ th {
 
 .centered-video {
     display: block;
+    max-width: 60vw;
     margin: 30px auto 5px auto;
 }
 
